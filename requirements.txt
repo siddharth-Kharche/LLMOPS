@@ -1,0 +1,8 @@
+Flask
+langsmith
+langchain
+langchain-groq
+langchain-huggingface
+langchain-community
+faiss-cpu==1.9.0.post1
+gunicorn
