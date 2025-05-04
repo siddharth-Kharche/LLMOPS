@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Report AI Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        #chat-container {
+            max-height: 70vh;
+            height: 70vh;
+            overflow-y: auto;
+        }
+        #chat-container::-webkit-scrollbar {
+            width: 8px;
+            height: 100px;
+        }
+        #chat-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        #chat-container::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+        #chat-container::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .listening-text {
+            font-size: 0.9rem;
+            color: #4A90E2;
+            animation: fadeInOut 1s infinite;
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .waveform {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+            height: 20px;
+        }
+
+        .waveform span {
+            display: block;
+            width: 5px;
+            height: 10px;
+            background: #4A90E2;
+            animation: bounce 1s infinite ease-in-out;
+        }
+
+        .waveform span:nth-child(1) { animation-delay: 0s; }
+        .waveform span:nth-child(2) { animation-delay: 0.1s; }
+        .waveform span:nth-child(3) { animation-delay: 0.2s; }
+        .waveform span:nth-child(4) { animation-delay: 0.3s; }
+        .waveform span:nth-child(5) { animation-delay: 0.4s; }
+
+        @keyframes bounce {
+            0%, 100% {
+                height: 10px;
+            }
+            50% {
+                height: 20px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="max-w-2xl mx-auto py-8 px-4">
+        <div class="bg-white shadow-md rounded-lg overflow-hidden">
+            <div class="bg-blue-600 text-white p-4 flex items-center">
+                <img src="/static/pngwing.com.png" alt="AI Assistant" class="w-10 h-10 rounded-full mr-3">
+                <div>
+                    <h2 class="font-semibold">School Report AI Assistant</h2>
+                    <p class="text-sm text-blue-200">Ready to analyze your school documents</p>
+                </div>
+            </div>
+
+            <div id="chat-container" class="p-4 space-y-4">
+                <div class="flex items-start mb-4">
+                    <img src="/static/pngwing.com.png" alt="AI" class="w-8 h-8 rounded-full mr-3">
+                    <div class="bg-gray-100 p-3 rounded-lg max-w-[80%]">
+                        <p>Hi there! I'm your School Report AI Assistant. Ask me anything about your school documents.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t p-4 bg-gray-50">
+                <form id="queryForm" class="flex items-center">
+                    <input 
+                        type="text" 
+                        id="query" 
+                        name="query" 
+                        placeholder="Ask about school documents..." 
+                        class="flex-grow p-2 border rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        required
+                    >
+                    <button 
+                        type="button" 
+                        id="micButton" 
+                        class="bg-gray-500 text-white p-2 rounded-lg hover:bg-gray-600 transition duration-300 mr-2"
+                    >
+                        <i class="fas fa-microphone"></i>
+                    </button>
+                    <button 
+                        type="submit" 
+                        class="bg-blue-600 text-white p-2 rounded-r-lg hover:bg-blue-700 transition duration-300"
+                    >
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+                <div id="listeningIndicator" class="hidden mt-4 text-center">
+                    <div class="waveform">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <p class="listening-text">Listening... Please speak now.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Existing jQuery functionality
+        $(document).ready(function() {
+            $('#queryForm').submit(function(event) {
+                event.preventDefault();
+                const query = $('#query').val();
+
+                // Add user message to chat
+                $('#chat-container').append(`
+                    <div class="flex justify-end items-start mb-4">
+                        <div class="bg-blue-500 text-white p-3 rounded-lg max-w-[80%]">
+                            ${query}
+                        </div>
+                    </div>
+                `);
+
+                // Clear input
+                $('#query').val('');
+
+                // Scroll to bottom
+                $('#chat-container').scrollTop($('#chat-container')[0].scrollHeight);
+
+                // Send request
+                $.post('/analyze', { query: query }, function(data) {
+                    // Add AI response to chat
+                    $('#chat-container').append(`
+                        <div class="flex items-start mb-4">
+                            <img src="/static/pngwing.com.png" alt="AI" class="w-8 h-8 rounded-full mr-3">
+                            <div class="bg-gray-100 p-3 rounded-lg max-w-[80%]">
+                                ${data.answer}
+                                <div class="text-xs text-gray-500 mt-2">Response Time: ${data.response_time.toFixed(2)} seconds</div>
+                            </div>
+                        </div>
+                    `);
+
+                    // Scroll to bottom
+                    $('#chat-container').scrollTop($('#chat-container')[0].scrollHeight);
+                }).fail(function() {
+                    $('#chat-container').append(`
+                        <div class="flex items-start mb-4">
+                            <img src="/static/pngwing.com.png" alt="AI" class="w-8 h-8 rounded-full mr-3">
+                            <div class="bg-red-100 text-red-800 p-3 rounded-lg max-w-[80%]">
+                                An error occurred. Please try again.
+                            </div>
+                        </div>
+                    `);
+
+                    // Scroll to bottom
+                    $('#chat-container').scrollTop($('#chat-container')[0].scrollHeight);
+                });
+            });
+        });
+
+        // Voice assistant integration
+        document.addEventListener('DOMContentLoaded', () => {
+            const micButton = document.getElementById('micButton');
+            const listeningIndicator = document.getElementById('listeningIndicator');
+
+            micButton.addEventListener('click', () => {
+                listeningIndicator.classList.remove('hidden');
+                startVoiceAssistant();
+            });
+        });
+
+        function startVoiceAssistant() {
+            if ('webkitSpeechRecognition' in window) {
+                let recognition = new webkitSpeechRecognition();
+                recognition.lang = "en-US";
+
+                recognition.start();
+
+                recognition.onresult = function (event) {
+                    const queryInput = document.getElementById('query');
+                    queryInput.value = event.results[0][0].transcript;
+                };
+
+                recognition.onerror = function (event) {
+                    console.error("Speech recognition error: ", event.error);
+                    alert(`Speech recognition error: ${event.error}`);
+                };
+
+                recognition.onend = function () {
+                    console.log("Speech recognition ended.");
+                    const listeningIndicator = document.getElementById('listeningIndicator');
+                    listeningIndicator.classList.add('hidden');
+                };
+            } else {
+                alert("Your browser does not support voice input. Please use a compatible browser.");
+            }
+        }
+    </script>
+</body>
+</html>

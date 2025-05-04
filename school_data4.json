@@ -1,0 +1,111 @@
+{
+    "UDISE_Code": "27 25 18 00 104",
+    "School_Name": "PMC SCHOOL NO. 10 B URDU",
+    "State": "Maharashtra",
+    "District": "PUNE",
+    "Block": "Pune City",
+    "Rural_Urban": "2-Urban",
+    "Cluster": "Pune City",
+    "CRC_No": "45",
+    "Ward": "CITY POST GADIKHANA",
+    "Mohalla": "Pincode^411002",
+    "Panchayat": "NA",
+    "City_Municipality": "Pune-Municipal Corporations",
+    "Assembly_Constituency": "215-Kasba Peth",
+    "Parliamentary_Constituency": "Pune",
+    "School_Category": "2 - Primary with Upper Primary",
+    "School_Management": "3-Local body",
+    "School_Type": "3-Co-educational",
+    "Lowest_and_Highest_Class": "1 - 7",
+    "Pre_Primary": "1-Yes",
+    "Medium_of_Instruction": {
+      "Medium_1": "Urdu",
+      "Medium_2": null,
+      "Medium_3": null,
+      "Medium_4": null
+    },
+    "Visit_of_School": {
+      "Acad_Inspections": "3",
+      "CRC_Coordinator": "8",
+      "Block_Level_Officers": "3",
+      "State_District_Officers": "3"
+    },
+    "Year_of_Establishment": "1873",
+    "Year_of_Recognition": {
+      "Primary": "1873",
+      "Upr_Primary": "1873",
+      "Secondary": "0",
+      "Higher_Secondary": "0"
+    },
+    "Affiliation_Board": {
+      "Secondary": null,
+      "Higher_Secondary": null
+    },
+    "Is_Shift_School": "1-Yes",
+    "Building_Status": "3-Government",
+    "Boundary_Wall": "1-Pucca",
+    "Number_of_Building_Blocks": "1",
+    "Pucca_Building_Blocks": "1",
+    "Is_Special_School_for_CWSN": "2-No",
+    "Availability_of_Ramps": "1-Yes",
+    "Availability_of_Handrails": "2-No",
+    "Anganwadi_At_Premises": "2-No",
+    "Anganwadi_Boys": "0",
+    "Anganwadi_Girls": "0",
+    "Anganwadi_Worker": "NA",
+    "Residential_School": "3 - Non-Residential",
+    "Minority_School": "2-No",
+    "Approachable_By_All_Weather_Road": "1-Yes",
+    "Toilets": {
+      "Boys": "4",
+      "Girls": "4",
+      "Total_Excluding_CWSN": "8",
+      "Functional": "4",
+      "CWSN_Friendly": "0",
+      "Urinals": "4"
+    },
+    "Handwash_Near_Toilet": "1-Yes",
+    "Handwash_Facility_for_Meal": "1-Yes",
+    "Total_Class_Rooms": "9",
+    "Class_Room_Condition": {
+      "Good": "9",
+      "Needs_Minor_Repair": "0",
+      "Needs_Major_Repair": "0"
+    },
+    "Other_Rooms": "0",
+    "Library_Availability": "1-Yes",
+    "Separate_Room_for_HM": "1-Yes",
+    "Drinking_Water_Available": "1-Yes",
+    "Drinking_Water_Functional": "1-Yes",
+    "Rain_Water_Harvesting": "2-No",
+    "Playground_Available": "1-Yes",
+    "Furniture_Availability": "182",
+    "Electricity_Availability": "1-Yes",
+    "Solar_Panel": "2-No",
+    "Medical_Checkups": "2-No",
+    "Digital_Facilities": {
+      "ICT_Lab": "1-Yes",
+      "Internet": "1-Yes",
+      "Desktop": "7",
+      "Laptop": "0",
+      "Tablet": "0",
+      "Printer": "1",
+      "Projector": "2",
+      "DTH": "2-No",
+      "DigiBoard": "0"
+    },
+    "No_of_Students_Received": {
+      "Primary": "11765",
+      "Up_Primary": null
+    },
+    "Free_Text_Books": "11765",
+    "Transport": {
+      "Primary": "0",
+      "Up_Primary": "0"
+    },
+    "Free_Uniform": {
+      "Primary": "0",
+      "Up_Primary": "0"
+    }
+  }
+  

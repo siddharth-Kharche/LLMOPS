@@ -1,0 +1,97 @@
+{
+    "UDISE_Code": "27 25 05 09 402",
+    "School_Name": "ZPPS LOHGAON-",
+    "State": "Maharashtra",
+    "District": "PUNE",
+    "Block": "HAVELI",
+    "Rural_Urban": "1-Rural",
+    "Cluster": "LOHGAON",
+    "Village": "LOHGAON",
+    "Habitation_Pincode": "411047",
+    "Panchayat_City": "NA",
+    "Municipality": "NA",
+    "Assembly_Constituency": "208-Vadgaon Sheri",
+    "Parliamentary_Constituency": "Pune",
+    "School_Category": "2 - Primary with Upper Primary",
+    "School_Management": "3-Local body",
+    "School_Type": "2-Girls",
+    "Lowest_and_Highest_Class": "1 - 7",
+    "Pre_Primary": "2-No",
+    "Medium_of_Instruction": {
+      "Medium_1": "Marathi",
+      "Medium_2": null,
+      "Medium_3": null,
+      "Medium_4": null
+    },
+    "Visit_of_School": {
+      "Acad_Inspections": "1",
+      "CRC_Coordinator": "23",
+      "Block_Level_Officers": "3",
+      "State_District_Officers": "0"
+    },
+    "Year_of_Establishment": "1981",
+    "Year_of_Recognition": {
+      "Primary": null,
+      "Upr_Primary": null,
+      "Secondary": "0",
+      "Higher_Secondary": "0"
+    },
+    "Affiliation_Board": {
+      "Secondary": null,
+      "Higher_Secondary": null
+    },
+    "Is_Shift_School": "2-No",
+    "Building_Status": "3-Government",
+    "Boundary_Wall": "1-Pucca",
+    "Number_of_Building_Blocks": "1",
+    "Pucca_Building_Blocks": "1",
+    "Is_Special_School_for_CWSN": "2-No",
+    "Availability_of_Ramps": "1-Yes",
+    "Availability_of_Handrails": "1-Yes",
+    "Anganwadi_At_Premises": "1-Yes",
+    "Anganwadi_Boys": "18",
+    "Anganwadi_Girls": "22",
+    "Anganwadi_Worker": "1-Yes",
+    "Residential_School": "3 - Non-Residential",
+    "Minority_School": "2-No",
+    "Approachable_By_All_Weather_Road": "1-Yes",
+    "Toilets": {
+      "Boys": "0",
+      "Girls": "9",
+      "Total_Excluding_CWSN": "9",
+      "Functional": "9",
+      "CWSN_Friendly": "1",
+      "Urinals": "18"
+    },
+    "Handwash_Near_Toilet": "1-Yes",
+    "Handwash_Facility_for_Meal": "1-Yes",
+    "Total_Class_Rooms": "12",
+    "Class_Room_Condition": {
+      "Good": "8",
+      "Needs_Minor_Repair": "4",
+      "Needs_Major_Repair": "0"
+    },
+    "Other_Rooms": "2",
+    "Library_Availability": "1-Yes",
+    "Separate_Room_for_HM": "2-No",
+    "Drinking_Water_Available": "1-Yes",
+    "Drinking_Water_Functional": "1-Yes",
+    "Rain_Water_Harvesting": "2-No",
+    "Playground_Available": "1-Yes",
+    "Furniture_Availability": "339",
+    "Electricity_Availability": "1-Yes",
+    "Solar_Panel": "1-Yes",
+    "Medical_Checkups": "1-Yes",
+    "Digital_Facilities": {
+      "ICT_Lab": "2-No",
+      "Internet": "2-No",
+      "Desktop": "0",
+      "Laptop": "0",
+      "Tablet": "0",
+      "Printer": "0",
+      "Projector": "0",
+      "DTH": "2-No",
+      "DigiBoard": "0"
+    }
+  }
+  
